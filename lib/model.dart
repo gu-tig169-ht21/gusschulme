@@ -22,3 +22,26 @@ class Mystate extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+class checkbox extends StatefulWidget {
+  const checkbox({Key? key}) : super(key: key);
+
+  @override
+  State<checkbox> createState() => checkboxState();
+}
+
+class checkboxState extends State<checkbox> {
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
+  }
+}

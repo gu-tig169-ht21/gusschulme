@@ -1,5 +1,3 @@
-// ignore_for_file: file_names, no_logic_in_create_state
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'model.dart';
@@ -42,11 +40,12 @@ class NewTodoState extends State<NewTodo> {
         children: [
           Container(height: 30),
           TextField(
-              controller: textEditingController,
-              decoration: const InputDecoration(
-                hintText: "Vad ska du?",
-                border: OutlineInputBorder(),
-              )),
+            controller: textEditingController,
+            decoration: const InputDecoration(
+              hintText: "Vad ska du?",
+              border: OutlineInputBorder(),
+            ),
+          ),
           Container(height: 30),
           ElevatedButton(
             child: const Text("+ ADD"),

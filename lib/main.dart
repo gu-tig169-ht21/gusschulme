@@ -31,10 +31,16 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("TIG169 TODO"), actions: const [
-        IconButton(
-            icon: Icon(Icons.menu_outlined), tooltip: 'menu', onPressed: null),
-      ]),
+      appBar: AppBar(
+          title: const Text("TIG169 TODO"),
+          centerTitle: true,
+          actions: const [
+            IconButton(
+              icon: Icon(Icons.menu_outlined),
+              tooltip: 'menu',
+              onPressed: null,
+            ),
+          ]),
       body: Consumer<Mystate>(
           builder: (context, state, child) => TodoList(state.list)),
       floatingActionButton: FloatingActionButton(

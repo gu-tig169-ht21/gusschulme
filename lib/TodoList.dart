@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +19,7 @@ class TodoList extends StatelessWidget {
 
   Widget _uppgiftitem(context, uppgift) {
     return ListTile(
-      leading: Checkbox(value: klar, onChanged: (bool? value) {}),
+      leading: const checkbox(),
       title: Text(uppgift.message),
       trailing: IconButton(
         icon: Icon(Icons.delete),
