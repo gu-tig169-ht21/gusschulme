@@ -42,7 +42,7 @@ class NewTodoState extends State<NewTodo> {
           TextField(
             controller: textEditingController,
             decoration: const InputDecoration(
-              hintText: "Vad ska du?",
+              hintText: "Vad ska du göra?",
               border: OutlineInputBorder(),
             ),
           ),
