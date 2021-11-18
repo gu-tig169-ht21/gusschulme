@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class Todo {
   String message;
-  late bool klar;
   Todo({required this.message});
 }
 

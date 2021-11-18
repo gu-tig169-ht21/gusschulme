@@ -41,7 +41,12 @@ class NewTodoState extends State<NewTodo> {
           child: Column(
         children: [
           Container(height: 30),
-          TextField(controller: textEditingController),
+          TextField(
+              controller: textEditingController,
+              decoration: const InputDecoration(
+                hintText: "Vad ska du?",
+                border: OutlineInputBorder(),
+              )),
           Container(height: 30),
           ElevatedButton(
             child: const Text("+ ADD"),
