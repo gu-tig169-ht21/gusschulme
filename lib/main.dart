@@ -52,11 +52,9 @@ class MainView extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => NewTodo(Todo(message: 'Tom uppgift'))),
           );
-
-          if (NewTodo != null) {
+           if (NewTodo != null) {
             Provider.of<Mystate>(context, listen: false).adduppgift(Nyuppgift);
-          }
-        },
+        }
       ),
     );
   }
