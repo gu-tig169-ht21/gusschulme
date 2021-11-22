@@ -18,16 +18,21 @@ class TodoList extends StatelessWidget {
   }
 
   Widget _uppgiftitem(context, uppgift) {
-    return ListTile(
-      leading: const checkbox(),
+    var state = Provider.of<Mystate>(context, listen: false);
+    return CheckboxListTile(
       title: Text(uppgift.message),
-      trailing: IconButton(
-        icon: Icon(Icons.delete),
+      secondary: IconButton(
+        icon: const Icon(Icons.delete),
         onPressed: () {
           var state = Provider.of<Mystate>(context, listen: false);
           state.removeuppgift(uppgift);
         },
       ),
+      controlAffinity: ListTileControlAffinity.leading,
+      value: uppgift.klar,
+      onChanged: (value) {
+        state.klar(uppgift);
+      },
     );
   }
 }

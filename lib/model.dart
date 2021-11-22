@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 
 class Todo {
   String message;
-  Todo({required this.message});
+  bool klar;
+  Todo({required this.message, this.klar = false});
+
+  void toggleDone(Todo uppgift) {
+    klar = !klar;
+  }
 }
 
 class Mystate extends ChangeNotifier {
   final List<Todo> _list = [];
 
   List<Todo> get list => _list;
+
+  int get filterBy => _filterBy;
 
   void adduppgift(Todo uppgift) {
     _list.add(uppgift);
@@ -21,6 +28,17 @@ class Mystate extends ChangeNotifier {
     _list.remove(uppgift);
     notifyListeners();
   }
+
+    void klar(Todo uppgift) {
+    uppgift.toggleDone(uppgift);
+    notifyListeners();
+  }
+
+  void setFilterBy(int filterBy) async {
+    _filterBy = filterBy;
+    notifyListeners();
+  }
+}
 }
 
 class checkbox extends StatefulWidget {
