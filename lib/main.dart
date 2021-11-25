@@ -6,6 +6,7 @@ import 'mainView.dart';
 
 void main() {
   var state = Mystate();
+  state.getList();
 
   runApp(
     ChangeNotifierProvider(
