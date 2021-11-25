@@ -44,4 +44,24 @@ class Api {
       return Todo.fromJson(data);
     }).toList();
   }
+
+  static Future checkuppgift(Todo uppgift) async {
+    Map<String, dynamic> json = Todo.toJson(uppgift);
+    var bodyString = jsonEncode(json);
+    var uppgiftId = uppgift.id;
+    var response = await http.put(
+      Uri.parse('$API_URL/todos/$uppgiftId?key=$API_KEY'),
+      body: bodyString,
+      headers: {'Content-Type': 'application/json'},
+    );
+    bodyString = response.body;
+    var list = jsonDecode(bodyString);
+
+    print(bodyString);
+    print(uppgiftId);
+
+    return list.map<Todo>((data) {
+      return Todo.fromJson(data);
+    }).toList();
+  }
 }

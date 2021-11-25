@@ -15,11 +15,12 @@ class Todo {
   static Map<String, dynamic> toJson(Todo uppgift) {
     return {
       'title': uppgift.title,
+      'done': (uppgift.done),
     };
   }
 
   static Todo fromJson(Map<String, dynamic> json) {
-    return Todo(id: json['id'], title: json['title']);
+    return Todo(id: json['id'], title: json['title'], done: json['done']);
   }
 }
 
@@ -47,8 +48,9 @@ class Mystate extends ChangeNotifier {
     notifyListeners();
   }
 
-  void done(Todo uppgift) {
-    uppgift.toggleDone(uppgift);
+  void checkuppgift(Todo activity) async {
+    activity.toggleDone(activity);
+    _list = await Api.checkuppgift(activity);
     notifyListeners();
   }
 

@@ -32,7 +32,7 @@ class TodoList extends StatelessWidget {
       controlAffinity: ListTileControlAffinity.leading,
       value: uppgift.done,
       onChanged: (value) {
-        state.done(uppgift);
+        state.checkuppgift(uppgift);
       },
     );
   }
