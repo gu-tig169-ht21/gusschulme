@@ -37,7 +37,8 @@ class MainView extends StatelessWidget {
           var nyuppgift = await Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => NewTodo(Todo(title: 'Tom uppgift'))),
+                builder: (context) =>
+                    NewTodo(Todo(id: '', title: 'Tom uppgift'))),
           );
           if (nyuppgift != null) {
             Provider.of<Mystate>(context, listen: false).adduppgift(nyuppgift);

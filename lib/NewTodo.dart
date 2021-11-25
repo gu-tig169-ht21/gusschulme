@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, no_logic_in_create_state
+// ignore_for_file: file_names
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class NewTodoState extends State<NewTodo> {
   late TextEditingController textEditingController;
 
   NewTodoState(Todo uppgift) {
-    this.title = uppgift.title!;
+    this.title = uppgift.title;
 
     textEditingController = TextEditingController();
 
@@ -52,7 +52,7 @@ class NewTodoState extends State<NewTodo> {
           ElevatedButton(
             child: const Text("+ ADD"),
             onPressed: () {
-              Navigator.pop(context, Todo(title: title));
+              Navigator.pop(context, Todo(title: title, id: ''));
             },
           ),
         ],
