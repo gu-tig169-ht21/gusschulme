@@ -19,7 +19,9 @@ class TodoList extends StatelessWidget {
   Widget _uppgiftitem(context, uppgift) {
     var state = Provider.of<Mystate>(context, listen: false);
     return CheckboxListTile(
-      title: Text(uppgift.title),
+      title: Text(uppgift.title,
+          style: TextStyle(
+              decoration: uppgift.done ? TextDecoration.lineThrough : null)),
       secondary: IconButton(
         icon: const Icon(Icons.delete),
         onPressed: () {
